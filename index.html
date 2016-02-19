@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<link type="text/css" rel="stylesheet" href="stylesheets/reset.css"/>
+		<link type="text/css" rel="stylesheet" href="stylesheets/bootstrap/bootstrap.css"/>
+		<link type="text/css" rel="stylesheet" href="stylesheets/stylesheet.css"/>
+
+		<title>Daisy Zheng | Personal Website</title>
+
+	</head>
+
+	<body>
+		<script type="text/javascript" src="javascripts/jquery-1.12.0.min.js"></script>
+		<script type="text/javascript" src="javascripts/javascript.js"></script>
+
+		<div class="bg">
+			<img src="stylesheets/images/IMG_5133.JPG" width=100% height=100%>
+		</div>
+
+		<div class="menus">
+			<ul class="ulmenu">
+				<li class="limenu"><a href="#/" onclick="$('#home').scrollViewHome()">Home</a></li>
+				<li class="limenu"><a href="#about/" onclick="$('#about').scrollView()">About</a></li>
+				<li class="limenu"><a href="#projects/" onclick="$('#projects').scrollView()">Projects</a></li>
+				<li class="limenu"><a href="#resume/" onclick="$('#resume').scrollView()">Resume</a></li>
+				<li class="limenu"><a href="http://chasingshadows4.wordpress.com">Blog</a></li>
+			</ul>
+		</div>
+
+		<div class="header" id="home">
+			<h1> Daisy Zheng </h1>
+			<h3> Student • Computer Scientist • Photographer  </h3>
+		</div>
+
+		<div class ="circular"></div>
+
+
+		<!-- ABOUT ME -->
+
+
+		<div class="content" id="about">
+			<h2> ~ About Me ~ </h2>
+			<hr class="thickline"> <br>
+			<p> Hi there, my name's Daisy! <br><br></p>
+			<h4> Computer Science </h4>
+			<p>
+				I'm currently a sophomore studying
+				computer science at Cornell University, set to graduate in May
+				2018. I chose computer science because I love to create new things
+				and solve puzzles, and computer science is a field that encompasses
+				those things and so much more. I am particularly interested in
+				computer vision and graphics, but I have interest in several other
+				areas of computer science as well, including game development and
+				cyber security.
+				<br><br>
+				I am constantly amazed by the power
+				that just a few (or many) lines of code hold. Computer science has allowed
+				us as a society to accomplish things we never thought possible, and
+				I look forward to continuing to push that boundary that separates
+				the impossible from the possible.
+				<br><br>
+				Check out my <a href="#projects/" onclick="$('#projects').scrollView()">Projects</a>
+				section for some examples of the kinds of projects I've worked on, or take a
+				look at my <a href="#resume/" onclick="$('#resume').scrollView()">Resume</a> to learn more!
+				<br><br>
+			</p>
+
+			<h4> Photography </h4>
+				<p>
+				I am also an avid photograper.
+				I was originally inspired to seriously start photography back in
+				2011. What started simply as a way to document my summer quickly
+				grew into a love of capturing those fleeting moments in life that
+				ordinarily would just pass us by.
+				I believe the supposedly ordinary things in the world can be
+				extraordinary in their own right if only you stop for a moment
+				and look. That’s what I try to capture in my photography. It's more
+				than the way I view photography - it's the way I view the world.
+				<br><br>
+				Photography has taken me to amazing places, both literally and
+				figuratively, and I’ll continue to follow it —  wherever the
+				clouds take me next.
+				<br><br>
+				If you're interested in seeing more of my photography, check out my photoblog,
+				<a href="http://chasingshadows4.wordpress,com">Chasing Clouds</a>!
+				</p>
+			</h4>
+		</div>
+
+
+		<!-- Projects -->
+
+
+		<div class="content" id="projects" style="padding: 40px 20px">
+			<h2> ~ Projects ~ </h2>
+			<hr class="thickline"> <br>
+			<div class="project">
+				<h4 style="text-align: center"> <a href="visualization.html" style="color: black">Data Visualization</a> </h4>
+				<img src="stylesheets/images/data_vis_screenshot.png" style="width: 100%">
+				<p>
+					<br> A visualization of educational standards and the
+					"cross walks" between them. This is designed as a tool to
+					help teachers and other educational workers design well-rounded
+					curriculums	that best encompass the skills that children need to learn
+					in order to succeed.<br><br>
+					This visualization includes features such as hover highlighting and tooltips,
+					collapsing/expanding, zooming, "sticky" nodes, and graph selection/toggling.
+					<br><br>
+					Written in HTML and JavaScript using D3.
+				</p>
+			</div>
+
+			<div class="project" style="vertical-align: top">
+				<h4 style="text-align: center"> <a href="snake.html" style="color: black">Snake Clash</a> </h4>
+				<div style="float: left">
+					<img src="stylesheets/images/snakeclash_screenshot.png" style="width: 95%">
+				</div>
+				<p>
+					Eat or... well just eat and don't crash!<br><br>
+					Snake is back! It's the classic game of eat and don't crash,
+					only this time your opponenet isn't just yourself. Race the AI
+					around the board and eat, eat, eat! Better eat fast, because
+					in this world, it's not just about survival of the fittest - it's
+					about survival of the biggest.
+					<br><br>
+					Written in Java.
+				</p>
+			</div>
+
+			<div class="project">
+				<h4 style="text-align: center"> Honeypot </h4>
+				<img src="stylesheets/images/honeypot_screenshot.png" style="width: 100%">
+				<p>
+					<br> A synchronized multicore honeypot that receives data packets and
+					detects if they are spam, evil, or vulnerable packets. Command packets
+					are received occassionally that updates the listings of spam, evil, or
+					vulnerable addresses or gives the honeypot other commands such as
+					printing stats. Stats can also be printed via any keystroke.
+					<br><br>
+					Written in C for CS 3410 in a team of 2.
+
+				</p>
+			</div>
+		</div>
+
+
+		<!-- Resume -->
+
+
+		<div class="content" id="resume">
+			<h2 style="color: black"> ~ Resume ~ </h2>
+			<hr class="thickline"> <br><br>
+			<p style="font-family: serif" align="center">
+				<span style="font-size: 24px">
+					<b> Daisy Zheng </b> </span> <br>
+					Ithaca, NY 14850 <br>
+					dhz9@cornell.edu
+				</span> <br>
+			</p>
+
+			<p style="font-family: serif">
+				<b> EDUCATION </b> <br> <hr class="thinline">
+				<ul>
+					<li class="liplain"> <b> Cornell University </b> </li>
+					<li class="liplain"> <i> College of Engineering </i> </li>
+					<li class="liplain"> Major: Computer Science, B.S. <span style="margin-left: 68px"> Minors: Business, Biology </span> </li>
+					<li class="liplain"> Expected Graduation: May 2018 <span style="margin-left: 60px"> GPA: 3.612 </span> </li>  <br>
+			</p>
+
+			<p style="font-family: serif">
+				<b> PROJECTS </b> <br> <hr class="thinline">
+				<ul>
+					<li class="libullets"> Data visualization of educational standards and their crosswalks, which includes features such interactive navigation and tooltips that provide detailed information about each node. Created using D3, HTML, and JavaScript. </li>
+					<li class="libullets"> Synchronized multicore honeypot that receives data packets, detects if they are spam, evil, vulnerable, or command packets, performs actions based on instructions in command packets, and outputs stats on command. Written in C. (Cornell CS 3410 project, team of 2) </li>
+					<li class="libullets"> Java algorithm that efficiently routes trucks to parcels such that it maximizes delivery speed and points collected in a delivery truck simulation. (Cornell CS 2110 project, team of 2) </li>
+					<li class="libullets"> Python script that analyzes credit card data to classify subscribers by type and duration, calculate yearly revenue, and determine the years with the greatest revenue growth and loss. </li>
+				</ul>
+				<br>
+			</p>
+
+			<p style="font-family: serif">
+				<b> WORK EXPERIENCE </b> <br> <hr class="thinline">
+				<ul>
+					<li class="liplain"> <b> Cornell University College of Human Ecology </b> <span style="float: right"> February 2016 – Present </li> </span>
+					<li class="liplain"> <i> Website Redesign Team – Content Mover </i> </li>
+					<ul>
+						<li class="libullets" style="margin-left: 80px"> Meet with clients from the College of Human Ecology to transfer content from the old website onto the new Drupal site, merging, editing, and redesigning as needed. </li>
+					</ul>
+
+					<li class="liplain"> <b> Oxley Equestrian Center </b> <span style="float: right"> September 2014 – December 2014 </li> </span>
+					<li class="liplain"> <i> Barn Hand </i> </li>
+					<ul>
+						<li class="libullets" style="margin-left: 80px"> Provided food, water, and bedding for horses and led horses into and out of fields. </li>
+						<li class="libullets" style="margin-left: 80px"> Learned on the job, having had no prior experience with horses. </li>
+					</ul>
+				</ul>
+				<br>
+			</p>
+
+			<p style="font-family: serif">
+				<b> ENGINEERING EXPERIENCE </b> <br> <hr class="thinline">
+				<ul>
+					<li class="liplain"> <b> WVBR 93.5 FM and CornellRadio.com </b>	<span style="float: right"> February 2016 – Present </li> </span>
+					<li class="liplain"> <i> Web Committee, DJ </i> </li>
+					<ul>
+						<li class="libullets" style="margin-left: 80px"> Currently designing and creating the new WVBR and CornellRadio.com websites, working mostly on front end. </li>
+						<li class="libullets" style="margin-left: 80px"> Host of a biweekly radio show on CornellRadio.com. </li>
+					</ul>
+
+					<br>
+
+					<li class="liplain"> <b> Cornell Coding Boot Camp </b>	<span style="float: right"> September 26, 2015 </li> </span>
+					<li class="liplain"> <i> Mentor </i> </li>
+					<ul>
+						<li class="libullets" style="margin-left: 80px"> Helped any participants who were experiencing coding difficulties or technical issues. </li>
+						<li class="libullets" style="margin-left: 80px"> Explained when JavaScript is used, how Git commands work, etc. </li>
+					</ul>
+
+					<br>
+
+					<li class="liplain"> <b> Concrete Canoe Engineering Project Team </b> <span style="float: right"> September 2014 – May 2015 </li> </span>
+					<li class="liplain"> <i> Aesthetics Subteam, Team Historian </i> </li>
+					<ul>
+						<li class="libullets" style="margin-left: 80px"> Subleader of the display board project: scheduled meetings and guided design and construction of the display board. </li>
+						<li class="libullets" style="margin-left: 80px"> Helped design the stands, display board, and canoe in accordance to the NYC theme. </li>
+						<li class="libullets" style="margin-left: 80px"> Documented mix/mold subteam meetings and Cast Day for display and report use. </li>
+					</ul>
+				</ul>
+			</p>
+		</div>
+		<br><br><br><br><br>
+	</body>
+</html>

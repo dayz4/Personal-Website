@@ -1,0 +1,216 @@
+@font-face {
+    font-family: pirates;
+    src: url("fonts/Pieces_of_Eight.ttf");
+}
+
+body {
+	background-color: black;
+}
+
+div {
+	display: inline-block;
+}
+
+.bg {
+	display: block;
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 0;
+	opacity: 0.9;
+}
+
+.circular {
+	display: block;
+	position: relative;
+	margin: auto;
+	margin-top: 60px;
+	width: 350px;
+	height: 350px;
+	border-radius: 175px;
+	background-image: url("images/IMG_0004.JPG");
+	background-size: 100%;
+	background-repeat: no-repeat;
+	z-index: 1;
+}
+
+.content {
+	display: block;
+	color: black;
+	position: relative;
+	z-index: 1;
+	margin: auto;
+	margin-top: 100px;
+	width: 95%;
+	background-color: rgba(255, 255, 255, 0.7);;
+	border-radius: 40px;
+	padding: 40px 200px;
+}
+
+.words {
+	position: relative;
+	opacity: 1;
+	z-index: 2;
+}
+
+.header {
+	position: relative;;;
+	display: block;
+	z-index: 1;
+	margin: auto;
+	margin-top: 100px;
+	margin-bottom: 5px;
+	width : 50%;
+	height: auto;
+}
+
+h1 {
+	font-family: pirates;
+	font-size: 100px;
+	color: white;
+	text-align: center;
+}
+
+h2 {
+	font-family: pirates;
+	font-size: 60px;
+	color: black;
+	text-align: center;
+	margin-top: 0px;
+}
+
+h3 {
+	font-family: pirates;
+	font-size: 30px;
+	color: white;
+	text-align: center;
+}
+
+h4 {
+	font-family: pirates;
+	font-size: 30px;
+	color: black;
+	text-align: left;
+}
+
+h5 {
+	font-family: sans-serif;;
+	font-size: 24px;
+	color: black;
+	text-align: left;
+}
+
+h6 {
+	font-family: serif;;
+	font-size: 24px;
+	color: black;
+	text-align: left;
+}
+
+.menus{
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	opacity: 0.8;
+	z-index: 2;
+	height: auto;
+	width: 100%;
+	background-color: #474e54;
+}
+
+.limenu {
+	float: left;
+}
+
+.limenu a {
+    display: block;
+    color: white;
+	text-align: center;
+	padding: 5px 20px;
+	font-size: 16px;
+}
+
+.limenu a:hover {
+	background-color: #3a8d65;
+	text-decoration: none;
+	color: white;
+}
+
+.ulmenu {
+    margin-left: 20px;
+	margin-bottom: 0px;
+    padding: 0;
+    overflow: hidden;
+}
+
+p {
+	font-family: sans-serif;
+	font-size: 16;
+	margin-bottom: 0px;
+}
+
+.project {
+	padding: 15px 60px;
+	position: relative;
+	width: 49%;
+
+}
+
+.applet {
+	margin: auto;
+}
+
+.thickline {
+	border-color: gray;
+	background-color: gray;
+	margin: 5px;
+	border-width: 3px;
+}
+
+.thinline {
+	border-color: black;
+	background-color: black;
+	margin: 5px;
+}
+
+.libullets {
+	margin-left: 40px;
+	margin-bottom: 5px;
+	list-style-type: disc;
+	font-family: serif;
+	font-size: 16px;
+}
+
+.liplain {
+	margin-left: 40px;
+	margin-bottom: 1px;
+	font-family: serif;
+	font-size: 16px;
+}
+
+.livis {
+	list-style-type: disc;
+	margin-left: 40px;
+	margin-bottom: 1px;
+	font-family: sans-serif;
+	font-size: inherit;
+}
+
+.applet {
+	position: relative;
+	display: block;
+	margin: auto;
+	width: auto;
+	height: auto;
+	background-color: transparent;
+}
+
+applet {
+	margin: auto;
+	display: block;
+	position: relative;
+	width: 320px;
+	height: 320px;
+}
