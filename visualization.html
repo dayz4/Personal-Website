@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<!-- This file uses the D3 and jQuery JavaScript libraries. Their copyright notices
+and license information are provided either inside their file or as a separate
+LICENSE file. -->
+
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<link type="text/css" rel="stylesheet" href="stylesheets/reset.css"/>
+		<link type="text/css" rel="stylesheet" href="stylesheets/bootstrap/bootstrap.css"/>
+		<link type="text/css" rel="stylesheet" href="stylesheets/stylesheet.css"/>
+
+		<title>Daisy Zheng | Data Visualization</title>
+
+		<style>
+			.tooltip {
+				position: absolute;
+				pointer-events: none;
+				display: inline-block;
+				padding: 5px;
+				border-radius: 10px;
+			}
+
+			.crosswalks {
+				position: absolute;
+				pointer-events: none;
+				display: inline-block;
+				padding: 5px;
+				border-radius: 10px;
+				z-index: 3;
+			}
+
+			svg {
+				position: relative;
+				margin-left: 6px;
+			}
+
+			.vis {
+				position: relative;
+				display: inline;
+				color: white;
+			}
+
+			.menus{
+				position: fixed;
+				top: 0px;
+				left: 0px;
+				opacity: 0.8;
+				z-index: 2;
+				height: auto;
+				width: 100%;
+				background-color: #474e54;
+			}
+		</style>
+	</head>
+
+	<body>
+		<script type="text/javascript" src="javascripts/jquery-1.12.0.min.js"></script>
+		<script type="text/javascript" src="javascripts/javascript.js"></script>
+		
+		<div class="bg" style="opacity: 0.4">
+			<img src="images/IMG_5133.JPG" width=100% height=100%>
+		</div>
+
+		<div class="nav"></div>
+
+		<div class="vis">
+			<br><br>
+			s1: <input type="checkbox" id="s1" checked = true/>
+			t1: <input type="checkbox" id="t1" checked = true/>
+			t2: <input type="checkbox" id="t2"/>
+			<br>
+			s2: <input type="checkbox" id="s2"/>
+			t3: <input type="checkbox" id="t3"/>
+			t4: <input type="checkbox" id="t4"/>
+			<br>
+
+			<script type="text/javascript" src="javascripts/d3.min.js"></script>
+			<script type="text/javascript" src="javascripts/jquery-1.12.0.min.js"></script>
+			<script type="text/javascript" src="javascripts/graph_mindsumo_json.js"></script>
+			<script type="text/javascript" src="javascripts/graph_mindsumo_json_2.js"></script>
+			<script type="text/javascript" src="javascripts/graph_mindsumo_partition.js"></script>
+		</div>
+
+		<div class="content" id="visualization">
+			<h4 style="font-size: 40px"> Desciption: </h4> <br>
+			<i> Quickstart: <br>
+			<ul>
+				<li class="livis"> Single Click: Collapse/Expand </li>
+				<li class="livis"> Double Click: Zoom In/Out </li>
+				<li class="livis"> Triple Click: Stick/Unstick Node </li>
+			</ul> </i>
+			<br>
+			This visualization uses a sunburst partition layout for each individual data set provided to show the nodes in a hierarchical format. Each node can be examined individually, with detailed information appearing that contains the node's statement notation followed by its description. Checkboxes at the top left of the page determine which graphs are visible at any given time.
+			<br><br>
+			The nodes are color coded according to the following scheme:
+			<br>
+			<ul>
+				<li class="livis" style="margin-top: 5px"> Gold: Expanded node that contains a cross walk. </li>
+				<li class="livis"> Orange: Collapsed node that contains a cross walk. </li>
+				<li class="livis"> Khaki: Collapsed node that doesn't have a cross walk, but one or more of its children does. </li>
+				<li class="livis"> Light Blue: Central node. When the graph is in an un-zoomed state, this node gives the name of the standards set. </li>
+				<li class="livis"> Light Purple: All other expanded nodes. </li>
+				<li class="livis" style="margin-bottom: 20px"> Dark Purple: All other collapsed nodes. </li>
+			</ul>
+			The different coloring of nodes with cross walks allows the teacher to quickly identify gaps between standards, since purple nodes show that there is no alignment there. Cross walk alignments of specific nodes are shown through highlighting the aligned nodes. When a node is hovered over, it along with all nodes it shares a cross walk with are highlighted red. Additionally, a box containing information on each of its cross walks appears on the right. This allows the teacher to easily see which nodes a specific node is aligned with and view information regarding each aligned node.
+			<br><br>
+			Clicking a node collapses or expands it. Double clicking zooms the graph in to that node, providing a clearer view if the teacher is specifically analyzing that domain or cluster. Double clicking the center node will zoom the graph back out, following the path that it took when zooming in. Triple clicking a node will cause that node to "stick" - the node and its cross walks will remain highlighted and the cross walks information will remain visible until it is triple clicked again, increasing convenience as the mouse is free to move off of the node as the teacher examines the information and cross walks.
+	</body>
+</html>
