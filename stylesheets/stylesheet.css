@@ -349,10 +349,23 @@ p#snake {
 }
 
 /*Portfolio*/
+
+.content#demo-reel {
+  text-align: center;
+}
+
+iframe {
+  margin: auto;
+}
+
+.content#photography, .content#pencil-drawings, .content#paintings {
+  text-align: center;
+  margin: 3em auto;
+}
+
 .content#phope-publicity {
   width: 90%;
   margin: 3em auto;
-  /*margin-top: 3em;*/
 }
 
 .portfolio-piece {
@@ -368,19 +381,16 @@ p#snake {
   height: 100%;
 }
 
-.content#demo-reel {
-  text-align: center;
+#pencil-drawings .portfolio-piece {
+  height: 550px;
 }
 
-iframe {
-  margin: auto;
+figcaption a {
+  color: gray;
 }
 
-.content#photography {
-  text-align: center;
-  margin: 3em auto;
-  /*margin-top: 3em;*/
-}
+
+/*Timeline*/
 
 .cd-timeline-content .cd-date {
   font-size: 28px;
