@@ -261,6 +261,10 @@ h1#loading {
 	transform: rotateY(180deg);
 }
 
+.tile p {
+  font-size: 14px;
+}
+
 #front,
 #back {
 	position: absolute;
