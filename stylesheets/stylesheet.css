@@ -389,6 +389,9 @@ figcaption a {
   color: gray;
 }
 
+#demo-reel p, #demo-reel a {
+  color: gray;
+}
 
 /*Timeline*/
 
