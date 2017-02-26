@@ -169,7 +169,11 @@ h1#loading {
 	height: 1350px;
 }
 
-.section#quote {
+.section#quote1 {
+	padding: 30px 20px;
+}
+
+.section#quote2 {
 	padding: 30px 20px;
 }
 
