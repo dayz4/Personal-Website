@@ -130,11 +130,11 @@ p {
 	position: fixed;
 	top: 263px;
 	left: 50%;
-	margin-left: -175px;
+	margin-left: -250px;
 	margin-top: 60px;
-	width: 350px;
-	height: 350px;
-	border-radius: 175px;
+	width: 500px;
+	height: 500px;
+	border-radius: 250px;
 	background-size: 100%;
 	background-repeat: no-repeat;
 }
