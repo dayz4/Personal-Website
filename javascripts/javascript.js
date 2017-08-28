@@ -27,7 +27,7 @@ $(window).on('load', function() {
 	$('.header').css('left', '55%').delay(400).animate({opacity: 'show', left: '50%'}, 800);
 	$('.circular').delay(1000).animate({width: '600px', height: '600px', 'border-radius': '300px', 'margin-left': '-300px', 'top': '300px'}, 1000);
 	$('.bg#home img').delay(1800).fadeIn(1000);
-	$('.header').delay(1800).animate({'color': 'white'}, 1000);
+	$('.header').delay(1200).animate({'color': 'white'}, 1000);
 });
 
 $(window).scroll(function() {
