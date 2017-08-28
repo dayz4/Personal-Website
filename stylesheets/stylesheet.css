@@ -88,7 +88,7 @@ p {
 }
 
 .li-nav {
-	float: left;
+	float: right;
 }
 
 .li-nav a {
@@ -104,7 +104,7 @@ p {
 	background-color: #02e3b0;
 	text-decoration: none;
 	color: black;
-	font-weight: bold;
+	font-weight: 600;
 }
 
 .ul-nav {
