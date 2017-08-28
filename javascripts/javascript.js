@@ -19,7 +19,7 @@ $(document).ready(function() {
 	$('.circular').css({'width':'0px', 'height':'0px', 'border-radius':'0px', 'margin-left':'0px', 'top':'600px'})
 	$('.bg#home img').hide();
 	$('.content#about').hide().css('margin-right', '0px');
-  $('.nav').load('navbar.html')
+  	$('.nav').load('navbar.html')
 })
 
 $(window).on('load', function() {
