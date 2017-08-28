@@ -97,21 +97,21 @@ p {
 	text-align: center;
 	padding: 10px 20px;
 	font-size: 16px;
-	font-weight: bold;
+	font-weight: 200;
 }
 
 .li-nav a:hover {
 	background-color: #46987e;
 	text-decoration: none;
 	color: black;
-	font-weight: bolder;
+	font-weight: bold;
 }
 
 .ul-nav {
-  margin-left: 20px;
+	margin-left: 20px;
 	margin-bottom: 0px;
-  padding: 0;
-  overflow: hidden;
+	padding: 0;
+	overflow: hidden;
 }
 
 .header {
