@@ -1,0 +1,2 @@
+images/mistic_trailer.mp4 filter=lfs diff=lfs merge=lfs -text
+resources/Mistic.jar filter=lfs diff=lfs merge=lfs -text
