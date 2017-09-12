@@ -119,10 +119,11 @@ p {
 	display: block;
 	z-index: 1;
 	top: 80px;
-	left: 50%;
-	margin-left: -25%;
+	left: 0;
+	/*left: 50%;*/
+	/*margin-left: -25%;*/
 	margin-bottom: 5px;
-	width : 50%;
+	width : 100%;
 	height: auto;
 }
 
@@ -131,7 +132,7 @@ p {
 }
 
 .header h4 {
-	font-size: 1.5em;
+	font-size: em;
 }
 
 @media only screen and (min-width: 800px) {
@@ -140,7 +141,7 @@ p {
 	}
 
 	.header h4 {
-		font-size: 2em;
+		font-size: 1.8em;
 	}
 }
 

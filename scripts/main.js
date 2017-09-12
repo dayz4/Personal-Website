@@ -26,7 +26,7 @@ $(document).ready(function() {
 
 $(window).on('load', function() {
 	$('h1#loading').fadeOut(400);
-	$('.header').css('left', '55%').delay(400).animate({opacity: 'show', left: '50%'}, 800);
+	$('.header').css('left', '5%').delay(400).animate({opacity: 'show', left: '0%'}, 800);
 	$('.circular').delay(1000).animate({width: '60vh', height: '60vh', 'border-radius': '30vh', 'margin-left': '-30vh', 'margin-top': '32vh'}, 1000);
 	$('.bg#home img').delay(1800).fadeIn(1000);
 	$('.header').delay(1200).animate({'color': 'white'}, 1000);
