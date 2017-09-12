@@ -24,10 +24,16 @@ $(document).ready(function() {
   	$('.nav').load('navbar.html')
 })
 
+var mq = window.matchMedia( "(min-width: 800px)" );
+
 $(window).on('load', function() {
 	$('h1#loading').fadeOut(400);
 	$('.header').css('left', '5%').delay(400).animate({opacity: 'show', left: '0%'}, 800);
-	$('.circular').delay(1000).animate({width: '60vh', height: '60vh', 'border-radius': '30vh', 'margin-left': '-30vh', 'margin-top': '32vh'}, 1000);
+	if (mq.matches) {
+		$('.circular').delay(1000).animate({width: '60vh', height: '60vh', 'border-radius': '30vh', 'margin-left': '-30vh', 'margin-top': '32vh'}, 1000);
+	} else {
+		$('.circular').delay(1000).animate({width: '90vw', height: '90vw', 'border-radius': '45vw', 'margin-left': '-30vh', 'margin-top': '32vh'}, 1000);
+	}
 	$('.bg#home img').delay(1800).fadeIn(1000);
 	$('.header').delay(1200).animate({'color': 'white'}, 1000);
 });
