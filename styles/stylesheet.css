@@ -22,29 +22,57 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-	font-size: 6em;
+	font-size: 2.6em;
 }
 
 h2 {
-	font-size: 4em;
+	font-size: 2em;
 }
 
 h3 {
-	font-size: 2.2em;
+	font-size: 1.6em;
 }
 
 h4 {
-	font-size: 2em;
+	font-size: 1.2em;
 }
 
 h5 {
-	font-size: 2em;
+	font-size: 1.2em;
 	text-align: left;
 }
 
 h6 {
 	font-family: relic;
-	font-size: 26px;
+	font-size: 1.1em;
+}
+
+@media only screen and (min-width: 800px) {
+	h1 {
+		font-size: 6em;
+	}
+
+	h2 {
+		font-size: 4em;
+	}
+
+	h3 {
+		font-size: 2.2em;
+	}
+
+	h4 {
+		font-size: 1.8em;
+	}
+
+	h5 {
+		font-size: 1.8em;
+		text-align: left;
+	}
+
+	h6 {
+		font-family: relic;
+		font-size: 1.6em;
+	}
 }
 
 p {
@@ -127,35 +155,27 @@ p {
 	height: auto;
 }
 
-.header h1 {
-	font-size: 2.5em;
-}
-
-.header h4 {
-	font-size: 1.2em;
-}
-
-@media only screen and (min-width: 800px) {
-	.header h1 {
-		font-size: 6em;
-	}
-
-	.header h4 {
-		font-size: 1.8em;
-	}
-}
-
 .circular {
 	display: block;
 	position: fixed;
 	left: 50%;
-	margin-left: -30vh;
+	margin-left: -45vw;
 	margin-top: 120px;
 	width: 90vw;
 	height: 90vw;
 	border-radius: 45vw;
 	background-size: 100%;
 	background-repeat: no-repeat;
+}
+
+#loading {
+	position: fixed;
+	display: block;
+	top: 35%;
+	left: 0;
+	margin-bottom: 5px;
+	width : 100%;
+	height: auto;
 }
 
 @media only screen and (min-width: 800px) {
@@ -171,23 +191,17 @@ p {
 		background-size: 100%;
 		background-repeat: no-repeat;
 	}
-}
 
-@media only screen and (min-width: 800px) {
-	.circular {
-		margin-top: 320px;
+	#loading {
+		position: fixed;
+		display: block;
+		top: 35%;
+		left: 50%;
+		margin-left: -25%;
+		margin-bottom: 5px;
+		width : 50%;
+		height: auto;
 	}
-}
-
-#loading {
-	position: fixed;
-	display: block;
-	top: 35%;
-	left: 50%;
-	margin-left: -25%;
-	margin-bottom: 5px;
-	width : 50%;
-	height: auto;
 }
 
 
@@ -205,10 +219,19 @@ p {
 }
 
 .section#about {
-	padding-top: 40px;
+	padding-top: 0;
 	background-size: cover;
 	background-repeat: no-repeat;
 	height: 1350px;
+}
+
+@media only screen and (min-width: 800px) {
+	.section#about {
+		padding-top: 40px;
+		background-size: cover;
+		background-repeat: no-repeat;
+		height: 1350px;
+	}
 }
 
 .section#quote1, .section#quote2 {
@@ -239,10 +262,21 @@ p {
 .content#about {
 	width: 100%;
 	margin-top: 40px;
-	margin-right: 50px;
-	padding: 30px 100px;
+	margin-right: 0px;
+	padding: 15px 25px;
 	background-color: rgba(255, 255, 255, 0.8);
 	float: right;
+}
+
+@media only screen and (min-width: 800px) {
+	.content#about {
+		width: 100%;
+		margin-top: 40px;
+		margin-right: 50px;
+		padding: 30px 100px;
+		background-color: rgba(255, 255, 255, 0.8);
+		float: right;
+	}
 }
 
 .content#quote2 {

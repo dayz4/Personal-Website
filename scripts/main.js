@@ -16,15 +16,19 @@ $.fn.scrollViewHome = function () {
     });
 }
 
+var mq = window.matchMedia( "(min-width: 800px)" );
+
 $(document).ready(function() {
 	$('.header').hide();
 	$('.circular').css({'width':'0px', 'height':'0px', 'border-radius':'0px', 'margin-left':'0px', 'margin-top':'62vh'})
 	$('.bg#home img').hide();
-	$('.content#about').hide().css('margin-right', '10px');
+	if (mq.matches) {
+		$('.content#about').hide().css('margin-right', '1%');
+	} else {
+		$('.content#about').hide().css('margin-right', '-4%');		
+	}
   	$('.nav').load('navbar.html')
 })
-
-var mq = window.matchMedia( "(min-width: 800px)" );
 
 $(window).on('load', function() {
 	$('h1#loading').fadeOut(400);
@@ -43,6 +47,10 @@ $(window).scroll(function() {
 	// var aboutTop = $('.content#about').offset().top;
 
 	if (scrollTop > 350) {
-		$('.content#about').animate({opacity: 'show', marginRight: '50px'}, 1000);;
+		if (mq.matches) {
+			$('.content#about').animate({opacity: 'show', marginRight: '5%'}, 1000);
+		} else {
+			$('.content#about').animate({opacity: 'show', marginRight: '0px'}, 1000);
+		}
 	}
 });
