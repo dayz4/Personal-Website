@@ -1,4 +1,8 @@
-$(document).foundation()
+$(document).ready(function(){
+
+    $(document).foundation();
+
+});
 
 $.fn.scrollView = function () {
     return this.each(function () {
@@ -25,7 +29,7 @@ $(document).ready(function() {
 	if (mq.matches) {
 		$('.content#about').hide().css('margin-right', '1%');
 	} else {
-		$('.content#about').hide().css('margin-right', '-4%');		
+		$('.content#about').hide().css('margin-right', '-4%');
 	}
   	$('.nav').load('navbar.html')
 })
@@ -36,7 +40,7 @@ $(window).on('load', function() {
 	if (mq.matches) {
 		$('.circular').delay(1000).animate({width: '60vh', height: '60vh', 'border-radius': '30vh', 'margin-left': '-30vh', 'margin-top': '32vh'}, 1000);
 	} else {
-		$('.circular').delay(1000).animate({width: '90vw', height: '90vw', 'border-radius': '45vw', 'margin-left': '-30vh', 'margin-top': '32vh'}, 1000);
+		$('.circular').delay(1000).animate({width: '90vw', height: '90vw', 'border-radius': '45vw', 'margin-left': '-45vw', 'margin-top': '32vh'}, 1000);
 	}
 	$('.bg#home img').delay(1800).fadeIn(1000);
 	$('.header').delay(1200).animate({'color': 'white'}, 1000);

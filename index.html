@@ -24,12 +24,15 @@
 		<img src="images/IMG_5133.JPG">
 	</div>
 
-	<div class="title-bar" data-responsive-toggle="main-menu" data-hide-for="medium">
-	  <div class="title-bar-right">
-	    <button class="menu-icon" type="button" data-toggle></button>
+	<div data-sticky-container data-sticky data-sticky-on="small" class="sticky-container" data-options="marginTop:0">
+		<div class="title-bar" data-responsive-toggle="navbar" data-hide-for="large">
+			<div class="title-bar-right">
+				<div class="title-bar-title" style="position: relative; z-index:3"><span style="color:white">Menu</span></div>
+				<button class="menu-icon" type="button" data-toggle="navbar"></button>
+			</div>
+		</div>
 
-		<div class="title-bar-title">Menu</div>
-	  </div>
+		<div class="nav" data-sticky data-margin-top="0" id="navbar" style="position: relative; z-index:5"></div>
 	</div>
 
 	<div class="section" id="home">
