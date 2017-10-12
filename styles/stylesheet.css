@@ -34,20 +34,20 @@ h3 {
 }
 
 h4 {
-	font-size: 1.2em;
+	font-size: 1.3em;
 }
 
 h5 {
-	font-size: 1.2em;
+	font-size: 1.3em;
 	text-align: left;
 }
 
 h6 {
 	font-family: relic;
-	font-size: 1.1em;
+	font-size: 1.2em;
 }
 
-@media only screen and (min-width: 800px) {
+@media only screen and (min-width: 1000px) {
 	h1 {
 		font-size: 6em;
 	}
@@ -77,7 +77,7 @@ h6 {
 
 p {
 	font-family: sans-serif;
-	font-size: 16px;
+	font-size: 1em;
 	margin-bottom: 0px;
 }
 
@@ -93,7 +93,7 @@ p {
 	background-color: white;
 }
 
-@media only screen and (min-width: 800px) {
+@media only screen and (min-width: 1000px) {
 	.nav {
 		position: fixed;
 		top: 0px;
@@ -197,7 +197,7 @@ p {
 	height: auto;
 }
 
-@media only screen and (min-width: 800px) {
+@media only screen and (min-width: 1000px) {
 	.circular {
 		display: block;
 		position: fixed;
@@ -245,15 +245,15 @@ p {
 	padding-top: 0;
 	background-size: cover;
 	background-repeat: no-repeat;
-	height: 1350px;
+	height: 1000px;
 }
 
-@media only screen and (min-width: 800px) {
+@media only screen and (min-width: 1000px) {
 	.section#about {
 		padding-top: 40px;
 		background-size: cover;
 		background-repeat: no-repeat;
-		height: 1350px;
+		height: 1000px;
 	}
 }
 
@@ -285,19 +285,53 @@ p {
 .content#about {
 	width: 100%;
 	margin-top: 40px;
-	margin-right: 0px;
+	margin-right: 0;
 	padding: 15px 25px;
 	background-color: rgba(255, 255, 255, 0.8);
 	float: right;
 }
 
-@media only screen and (min-width: 800px) {
+.content#nav {
+	width: 100%;
+	margin-top: 20px;
+	margin-right: 0px;
+	padding: 15px 25px;
+	text-align: center;
+	float: right;
+}
+
+@media only screen and (min-width: 1000px) {
 	.content#about {
 		width: 100%;
-		margin-top: 40px;
-		margin-right: 50px;
+		margin-top: 20px;
+		padding: 30px 60px;
+		background-color: rgba(255, 255, 255, 0.8);
+		float: right;
+	}
+
+	.content#nav {
+		width: 100%;
+		margin-top: 10px;
+		margin-right: 5%;
+		text-align: center;
+		float: right;
+	}
+}
+
+@media only screen and (min-width: 1600px) {
+	.content#about {
+		width: 100%;
+		margin-top: 90px;
 		padding: 30px 100px;
 		background-color: rgba(255, 255, 255, 0.8);
+		float: right;
+	}
+
+	.content#nav {
+		width: 100%;
+		margin-top: 50px;
+		margin-right: 5%;
+		text-align: center;
 		float: right;
 	}
 }
@@ -332,6 +366,22 @@ p {
 
 
 /** Pages */
+.page#about {
+	padding: 60px 180px;
+	background-color: rgba(255, 255, 255, 1);
+
+}
+
+.page#about ul {
+	text-align: center;
+	margin-top: .5em;
+	margin-bottom: .5em;
+}
+
+.page#about li {
+	list-style-type: none;
+	font-size: 1.1em;
+}
 
 .page#projects {
 	padding: 60px 0px;
@@ -526,4 +576,78 @@ figcaption a {
   .cd-timeline-content .cd-date {
     top: 0px;
   }
+}
+
+
+/*Misc*/
+.emph {
+	font-size: 1.2em;
+
+}
+
+.button.hollow {
+	padding: .55em .8em;
+	margin-top: 1em;
+	margin-right: .5em;
+	border-color: #02e3b0;
+	border-width: 3px;
+	font-weight: bold;
+	color: #02e3b0;
+	-webkit-transition: color 0s; /* Safari */
+    transition: color 0s;
+}
+
+.button.hollow:hover {
+	border-color: #03b087;
+	color: #03b087;
+}
+
+.button.hollow:active {
+	border-color: #02e3b0;
+	color: #02e3b0;
+}
+
+.button.primary {
+	padding: .8em 1.1em;
+	margin: .5em .5em;
+	background-color: #02e3b0;
+	font-weight: bold;
+	color: black;
+	-webkit-transition: color 0s; /* Safari */
+    transition: color 0s;
+    border-radius: 10px;
+}
+
+.button.primary:hover {
+	background-color: #02e3b0;
+	color: white;
+}
+
+.button.primary:active {
+	background-color: #02e3b0;
+	color: black;
+}
+
+.larger-button {
+	font-size: 1em;
+}
+
+@media only screen and (min-width: 1000px) {
+	.larger-button {
+		font-size: 1.1em;
+	}
+}
+
+@media only screen and (min-width: 1600px) {
+	.larger-button {
+		font-size: 1.3em;
+	}
+}
+
+.large-button {
+	font-size: 1.1em;
+}
+
+.small-button {
+	font-size: 1.05em;
 }

@@ -20,7 +20,7 @@ $.fn.scrollViewHome = function () {
     });
 }
 
-var mq = window.matchMedia( "(min-width: 800px)" );
+var mq = window.matchMedia( "(min-width: 1000px)" );
 
 $(document).ready(function() {
 	$('.header').hide();
@@ -32,6 +32,7 @@ $(document).ready(function() {
 		$('.content#about').hide().css('margin-right', '-4%');
 	}
   	$('.nav').load('navbar.html')
+  	$('.content#nav').hide();
 })
 
 $(window).on('load', function() {
@@ -56,5 +57,6 @@ $(window).scroll(function() {
 		} else {
 			$('.content#about').animate({opacity: 'show', marginRight: '0px'}, 1000);
 		}
+		$('.content#nav').show();
 	}
 });
