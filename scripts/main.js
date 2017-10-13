@@ -36,7 +36,7 @@ $(document).ready(function() {
 })
 
 $(window).on('load', function() {
-	$('h1#loading').fadeOut(400);
+	$('#loading').fadeOut(400);
 	$('.header').css('left', '5%').delay(400).animate({opacity: 'show', left: '0%'}, 800);
 	if (mq.matches) {
 		$('.circular').delay(1000).animate({width: '60vh', height: '60vh', 'border-radius': '30vh', 'margin-left': '-30vh', 'margin-top': '32vh'}, 1000);
