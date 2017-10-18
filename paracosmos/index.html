@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Along for the Ride</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+<script src="js/three.min.js"></script>
+<script src="js/constants.js"></script>
+<script src="js/terrain.js"></script>
+
+<script id="vertexShader">
+</script>
+
+<!-- <script id="fragmentShader">
+    uniform mat2 mask;
+    uniform mat2 img;
+    uniform vec2 origin;
+    uniform float spread;
+</script> -->
+
+<script>
+    function init() {
+        var WIDTH = window.innerWidth;
+        var HEIGHT = window.innerHeight;
+        
+        scene = new THREE.Scene();
+        
+        camera = new THREE.PerspectiveCamera(75, WIDTH /HEIGHT, 0.1, 800);
+        camera.position.set(0,50,0);
+        camera.lookAt(new THREE.Vector3(0,50,-1));
+        scene.add(camera);
+
+        renderer = new THREE.WebGLRenderer({antialias:true});
+        renderer.setSize(WIDTH, HEIGHT);
+        document.body.appendChild(renderer.domElement);
+
+        window.addEventListener('resize', function() {
+            var WIDTH = window.innerWidth;
+            var HEIGHT = window.innerHeight;
+            renderer.setSize(WIDTH, HEIGHT);
+            camera.aspect = WIDTH / HEIGHT;
+            camera.updateProjectionMatrix();
+        })
+
+        renderer.setClearColor(0x555555, 1);
+
+        var ambientLight = new THREE.AmbientLight(0xffffff, .5);
+        scene.add(ambientLight);
+        var directionalLight = new THREE.DirectionalLight(0xffffff, .8);
+        directionalLight.position.set(-60, 60, 80);
+        directionalLight.target.position.set(0, 0, 0);
+        scene.add(directionalLight);
+        scene.add(directionalLight.target);
+
+        createPlane();
+    }
+
+
+    function loadPlane() {
+        var loader = new THREE.JSONLoader();
+        loader.load("assets/models/paper_airplane.js", function(geometry) {
+            var material = new THREE.MeshLambertMaterial({color:0xffffff});
+            plane = new THREE.Mesh(geometry, material);
+            planeLoaded = true;
+        })
+    }
+
+    function createPlane() {
+        plane.rotation.y = (Math.PI);
+        plane.position.set(0,30,-60);
+        plane.scale.set(.5,.5,.5);
+        scene.add(plane);
+    }
+    
+
+    function animate() {
+        requestAnimationFrame(animate);
+
+        renderer.render(scene, camera);
+        for (var i=0; i<N_GROUND_TILES; i++) {
+            groundTiles[i].position.z += 1;
+            if (groundTiles[i].position.z > TERRAIN_SIZE/2) {
+                groundTiles[i].position.z -= (TERRAIN_SIZE-DIV_SIZE)*3;
+            }
+
+            if (left_pressed) {
+                groundTiles[i].position.x += 1;
+                if (groundTiles[i].position.x > TERRAIN_SIZE*5.5) {
+                    groundTiles[i].position.x -= (TERRAIN_SIZE-DIV_SIZE)*10;
+                }
+            } else if (right_pressed) {
+                groundTiles[i].position.x -= 1;
+                if (groundTiles[i].position.x < -TERRAIN_SIZE*5.5) {
+                    groundTiles[i].position.x += (TERRAIN_SIZE-DIV_SIZE)*10;
+                }
+            }
+
+            if (up_pressed) {
+                groundTiles[i].position.y -= 1;
+            } else if (down_pressed) {
+                if (groundTiles[i].position.y < 25) {
+                    groundTiles[i].position.y += 1;
+                }
+            }
+        }
+
+        if (left_pressed) {
+            if (plane.rotation.z > -Math.PI/6) {
+                if (plane.rotation.z > -Math.PI/8) {
+                    plane.rotation.z -= Math.PI/180*(1+plane.rotation.z/(-Math.PI/6));
+                    bg.position.x += 1+plane.rotation.z/(-Math.PI/6);
+                } else {
+                    plane.rotation.z -= Math.PI/180*(1+(-Math.PI/6-plane.rotation.z)/(-Math.PI/6));
+                    bg.position.x += 1+(-Math.PI/6-plane.rotation.z)/(-Math.PI/6);
+                }
+
+            }
+        } else {
+            if (plane.rotation.z < 0) {
+                plane.rotation.z += Math.PI/180;
+                
+                if (plane.rotation.z > 0) {
+                    plane.rotation.z = 0;
+                }
+                bg.position.x -= 1;
+            }
+        }
+
+        if (right_pressed) {
+            if (plane.rotation.z < Math.PI/6) {
+                if (plane.rotation.z < Math.PI/8) {
+                    plane.rotation.z += Math.PI/180*(1+plane.rotation.z/(Math.PI/6));
+                    bg.position.x -= 1+plane.rotation.z/(Math.PI/6);
+
+                } else {
+                    plane.rotation.z += Math.PI/180*(1+(Math.PI/6-plane.rotation.z)/(Math.PI/6));
+                    bg.position.x -= 1+(Math.PI/6-plane.rotation.z)/(Math.PI/6);
+                }
+            }
+        } else {
+            if (plane.rotation.z > 0) {
+                plane.rotation.z -= Math.PI/180;
+                
+                if (plane.rotation.z < 0) {
+                    plane.rotation.z = 0;
+                }
+                bg.position.x += 1;
+            }
+        }
+
+
+        if (up_pressed) {
+            if (plane.rotation.x < Math.PI/6) {
+                if (plane.rotation.x < Math.PI/8) {
+                    plane.rotation.x += Math.PI/180*(1+plane.rotation.x/(Math.PI/6));
+
+                } else {
+                    plane.rotation.x += Math.PI/180*(1+(Math.PI/6-plane.rotation.x)/(Math.PI/6));
+                }
+            }
+        } else {
+            if (plane.rotation.x > 0) {
+                plane.rotation.x -= Math.PI/180;
+            }
+        }        
+        
+        if (down_pressed) {
+            if (plane.rotation.x > -Math.PI/6) {
+                if (plane.rotation.x > -Math.PI/8) {
+                    plane.rotation.x -= Math.PI/180*(1+plane.rotation.x/(-Math.PI/6));
+                } else {
+                    plane.rotation.x -= Math.PI/180*(1+(-Math.PI/6-plane.rotation.x)/(-Math.PI/6));
+                }
+            }
+        } else {
+            if (plane.rotation.x < 0) {
+                plane.rotation.x += Math.PI/180;
+            }
+        }
+
+        if (time == 100) {
+            createVignette(imgs[0], watercolors[0], masks[0]);
+        }
+
+        time += 1;
+    }
+
+
+    // function createVignette(img, watercolor, mask) {
+    //     var origin = [w/2, h/2];
+    //     var spread = time
+    //     setImageTexture(img, watercolor, mask, origin, spread)
+    // }
+
+
+    function createBG(width, height) {
+        var geometry = new THREE.PlaneGeometry(width, height);
+
+        bgTexture.wrapS = THREE.RepeatWrapping;
+        bgTexture.wrapT = THREE.RepeatWrapping;
+        bgTexture.repeat.set(1, 1);
+
+        var material = new THREE.MeshLambertMaterial({map: bgTexture, side:THREE.DoubleSide});
+
+        bg = new THREE.Mesh(geometry, material);
+        bg.position.set(0, 0,-700);
+        scene.add(bg);
+    }
+
+    function generateLand() {
+        groundTiles = [];
+        generateTerrain(TERRAIN_SIZE, TERRAIN_SIZE/DIV_SIZE, 0, 0);
+        generateTerrain(TERRAIN_SIZE, TERRAIN_SIZE/DIV_SIZE, 0, -(TERRAIN_SIZE-DIV_SIZE));
+        generateTerrain(TERRAIN_SIZE, TERRAIN_SIZE/DIV_SIZE, -(TERRAIN_SIZE-DIV_SIZE), 0);
+        generateTerrain(TERRAIN_SIZE, TERRAIN_SIZE/DIV_SIZE, TERRAIN_SIZE-DIV_SIZE, 0);
+        generateTerrain(TERRAIN_SIZE, TERRAIN_SIZE/DIV_SIZE, -(TERRAIN_SIZE-DIV_SIZE), -(TERRAIN_SIZE-DIV_SIZE));
+        generateTerrain(TERRAIN_SIZE, TERRAIN_SIZE/DIV_SIZE, TERRAIN_SIZE-DIV_SIZE, -(TERRAIN_SIZE-DIV_SIZE));
+        generateTerrain(TERRAIN_SIZE, TERRAIN_SIZE/DIV_SIZE, 0, -(TERRAIN_SIZE-DIV_SIZE)*2);
+        generateTerrain(TERRAIN_SIZE, TERRAIN_SIZE/DIV_SIZE, -(TERRAIN_SIZE-DIV_SIZE), -(TERRAIN_SIZE-DIV_SIZE)*2);
+        generateTerrain(TERRAIN_SIZE, TERRAIN_SIZE/DIV_SIZE, TERRAIN_SIZE-DIV_SIZE, -(TERRAIN_SIZE-DIV_SIZE)*2);
+        generateTerrain(TERRAIN_SIZE, TERRAIN_SIZE/DIV_SIZE, -(TERRAIN_SIZE-DIV_SIZE)*2, 0);
+        generateTerrain(TERRAIN_SIZE, TERRAIN_SIZE/DIV_SIZE, (TERRAIN_SIZE-DIV_SIZE)*2, 0);
+        generateTerrain(TERRAIN_SIZE, TERRAIN_SIZE/DIV_SIZE, -(TERRAIN_SIZE-DIV_SIZE)*2, -(TERRAIN_SIZE-DIV_SIZE));
+        generateTerrain(TERRAIN_SIZE, TERRAIN_SIZE/DIV_SIZE, (TERRAIN_SIZE-DIV_SIZE)*2, -(TERRAIN_SIZE-DIV_SIZE));
+        generateTerrain(TERRAIN_SIZE, TERRAIN_SIZE/DIV_SIZE, -(TERRAIN_SIZE-DIV_SIZE)*2, -(TERRAIN_SIZE-DIV_SIZE)*2);
+        generateTerrain(TERRAIN_SIZE, TERRAIN_SIZE/DIV_SIZE, (TERRAIN_SIZE-DIV_SIZE)*2, -(TERRAIN_SIZE-DIV_SIZE)*2);
+        generateTerrain(TERRAIN_SIZE, TERRAIN_SIZE/DIV_SIZE, -(TERRAIN_SIZE-DIV_SIZE)*3, 0);
+        generateTerrain(TERRAIN_SIZE, TERRAIN_SIZE/DIV_SIZE, (TERRAIN_SIZE-DIV_SIZE)*3, 0);
+        generateTerrain(TERRAIN_SIZE, TERRAIN_SIZE/DIV_SIZE, -(TERRAIN_SIZE-DIV_SIZE)*3, -(TERRAIN_SIZE-DIV_SIZE));
+        generateTerrain(TERRAIN_SIZE, TERRAIN_SIZE/DIV_SIZE, (TERRAIN_SIZE-DIV_SIZE)*3, -(TERRAIN_SIZE-DIV_SIZE));
+        generateTerrain(TERRAIN_SIZE, TERRAIN_SIZE/DIV_SIZE, -(TERRAIN_SIZE-DIV_SIZE)*3, -(TERRAIN_SIZE-DIV_SIZE)*2);
+        generateTerrain(TERRAIN_SIZE, TERRAIN_SIZE/DIV_SIZE, (TERRAIN_SIZE-DIV_SIZE)*3, -(TERRAIN_SIZE-DIV_SIZE)*2);
+        generateTerrain(TERRAIN_SIZE, TERRAIN_SIZE/DIV_SIZE, -(TERRAIN_SIZE-DIV_SIZE)*4, 0);
+        generateTerrain(TERRAIN_SIZE, TERRAIN_SIZE/DIV_SIZE, (TERRAIN_SIZE-DIV_SIZE)*4, 0);
+        generateTerrain(TERRAIN_SIZE, TERRAIN_SIZE/DIV_SIZE, -(TERRAIN_SIZE-DIV_SIZE)*4, -(TERRAIN_SIZE-DIV_SIZE));
+        generateTerrain(TERRAIN_SIZE, TERRAIN_SIZE/DIV_SIZE, (TERRAIN_SIZE-DIV_SIZE)*4, -(TERRAIN_SIZE-DIV_SIZE));
+        generateTerrain(TERRAIN_SIZE, TERRAIN_SIZE/DIV_SIZE, -(TERRAIN_SIZE-DIV_SIZE)*4, -(TERRAIN_SIZE-DIV_SIZE)*2);
+        generateTerrain(TERRAIN_SIZE, TERRAIN_SIZE/DIV_SIZE, (TERRAIN_SIZE-DIV_SIZE)*4, -(TERRAIN_SIZE-DIV_SIZE)*2);
+        generateTerrain(TERRAIN_SIZE, TERRAIN_SIZE/DIV_SIZE, -(TERRAIN_SIZE-DIV_SIZE)*5, 0);
+        generateTerrain(TERRAIN_SIZE, TERRAIN_SIZE/DIV_SIZE, (TERRAIN_SIZE-DIV_SIZE)*5, 0);
+        generateTerrain(TERRAIN_SIZE, TERRAIN_SIZE/DIV_SIZE, -(TERRAIN_SIZE-DIV_SIZE)*5, -(TERRAIN_SIZE-DIV_SIZE));
+        generateTerrain(TERRAIN_SIZE, TERRAIN_SIZE/DIV_SIZE, (TERRAIN_SIZE-DIV_SIZE)*5, -(TERRAIN_SIZE-DIV_SIZE));
+        generateTerrain(TERRAIN_SIZE, TERRAIN_SIZE/DIV_SIZE, -(TERRAIN_SIZE-DIV_SIZE)*5, -(TERRAIN_SIZE-DIV_SIZE)*2);
+        generateTerrain(TERRAIN_SIZE, TERRAIN_SIZE/DIV_SIZE, (TERRAIN_SIZE-DIV_SIZE)*5, -(TERRAIN_SIZE-DIV_SIZE)*2);
+    }
+
+    
+    function generateTerrain(size, ndiv, ox, oz) {
+        var p_unique = genP();
+
+        var elevData = [];
+
+        var elev;
+        var redistrib = 12;
+        var maxElev = 25;
+
+        var p;
+        for (var j = 0; j < ndiv; j++) {
+            for (var i = 0; i < ndiv; i++) {
+                if (i == 0 || i == ndiv-1 || j == 0 || j == ndiv-1) {
+                    p = p_border;
+                } else {
+                    p = p_unique;
+                }
+
+                var x = (i == 0 || i == ndiv-1) ? 0 : i/ndiv;
+                var y = (j == 0 || j == ndiv-1) ? 0 : j/ndiv;
+
+                elev = perlin(5 * x, 5 * y, 5, p, 3);
+                elev = Math.pow(Math.sin(2*elev), redistrib);
+                elevData.push(elev*maxElev);
+            }
+        }
+
+        var geometry = new THREE.Geometry();
+
+        for (var j=0; j<ndiv; j++) {
+            for (var i=0; i<ndiv; i++) {
+                x = i*DIV_SIZE;
+                y = j*DIV_SIZE;
+                var e = elevData[j*ndiv + i];
+                geometry.vertices.push( new THREE.Vector3(x - size/2, elevData[j*ndiv + i], -y + size/2) );
+            }
+        }
+        
+        for (var j=0; j<ndiv-1; j++) {
+            for (var i=0; i<ndiv-1; i++) {
+                var bLeft = (j*ndiv) + i;
+                var bRight = (j*ndiv) + i + 1;
+                var tLeft = ((j+1)*ndiv) + i;
+                var tRight = ((j+1)*ndiv) + i + 1;
+
+                geometry.faces.push( new THREE.Face3(bLeft, bRight, tLeft) );
+                geometry.faces.push( new THREE.Face3( tLeft, bRight, tRight) );
+            }
+        }
+
+        geometry.computeFaceNormals();
+
+        var material = new THREE.MeshLambertMaterial({color:0x00cc66, side:THREE.DoubleSide});
+        var mesh = new THREE.Mesh(geometry, material);
+        mesh.position.set(ox, 0, oz)
+        groundTiles.push(mesh);
+        scene.add(mesh);
+    }
+
+
+    function handleKeyDown(event) {
+        if (event.keyCode == 37) {
+            left_pressed = true;
+            right_pressed = false;
+
+            console.log('left press');
+        } else if (event.keyCode == 39) {
+            right_pressed = true;
+            left_pressed = false;
+        } 
+
+        if (event.keyCode == 38) {
+            up_pressed = true;
+            down_pressed = false;
+        } else if (event.keyCode == 40) {
+            down_pressed = true;
+            up_pressed = false;
+        }
+    }
+
+    function handleKeyUp(event) {
+        if (event.keyCode == 37) {
+            left_pressed = false;
+            camera_delay = -1;
+        } else if (event.keyCode == 39) {
+            right_pressed = false;
+            camera_delay = -1;
+        }
+        
+        if (event.keyCode == 38) {
+            up_pressed = false;
+            camera_delay = -1;
+        } else if (event.keyCode == 40) {
+            down_pressed = false;
+            camera_delay = -1;
+        }  
+    }
+
+    function ease(tick, start, end) {
+        var t = tick/(MAX_TICK/2);
+        if (t < 1) return end/2*t*t + start;
+        t--;
+        return -end/2 * (t*(t-2) - 1) + start;
+    }
+
+
+    function loadImages() {
+        console.log('loading');
+        var imgsLoaded = false,
+            watercolorsLoaded = false,
+            masksLoaded = false,
+            bgLoaded = false;
+
+        var loader = new THREE.ImageLoader();
+
+        imgs = [];
+        for (var i=1; i<=N_IMGS; i++) {
+            loader.load("assets/images/" + i + ".jpeg", function(image) {
+                imgs.push(image);
+            });
+
+            if (i==N_IMGS) {
+                imgsLoaded = true;
+                if (watercolorsLoaded && masksLoaded && bgLoaded) {
+                    imagesLoaded = true;
+                }
+            }
+        }
+    
+        watercolors = [];
+        for (var j=1; j<=N_WATERCOLORS; j++) {
+            loader.load("assets/watercolors/watercolor" + j + ".jpg", function(image) {
+                watercolors.push(image);
+            });
+
+            if (j==N_WATERCOLORS) {
+                watercolorsLoaded = true;
+                if (imgsLoaded && masksLoaded && bgLoaded) {
+                    imagesLoaded = true;
+                }
+            }
+        }
+
+        masks = [];
+        for (var k=1; k<=N_MASKS; k++) {
+            loader.load("assets/watercolors/mask" + k + ".jpg", function(image) {
+                masks.push(image);
+            });
+
+            if (k==N_MASKS) {
+                masksLoaded = true;
+                if (imgsLoaded && watercolorsLoaded && bgLoaded) {
+                    imagesLoaded = true;
+                }
+            }
+        }
+
+        bgTexture = new THREE.TextureLoader().load("assets/misc/bg.jpg", function() {
+            bgLoaded = true;
+            if (imgsLoaded && watercolorsLoaded && masksLoaded) {
+                imagesLoaded = true;
+            } 
+        });
+    }
+
+
+    function initAudioContext() {
+        try {
+            window.AudioContext = window.AudioContext || window.webkitAudioContext;
+            return new AudioContext();
+        } catch(e) {
+            alert("Web Audio API is not supported in this browser")
+        }
+    }
+
+    function setVolume(source, val) {
+        var gainNode = context.createGain();
+        source.connect(gainNode);
+        gainNode.connect(context.destination);
+        gainNode.gain.value = val;
+    }
+
+    function loadMusic(fn) {
+        var request = new XMLHttpRequest();
+ 
+        request.open('GET', fn, true);
+        request.responseType = 'arraybuffer';
+         
+        request.onload = function () {
+            var undecoded = request.response;
+            context.decodeAudioData(undecoded, function(buffer) {
+                source = context.createBufferSource();
+                source.buffer = buffer;
+                musicLoaded = true;
+            })
+        };
+         
+        request.send();
+    }
+
+
+    function playMusic(source) {
+        setVolume(source, .3);
+        source.start(0);
+    }
+
+
+    function setImageTexture() {
+        var material = new THREE.ShaderMaterial( {
+            uniforms: {
+                img: { value: img },
+                watercolor: { value: watercolor },
+                mask: { value: mask },
+                origin: { value: origin },
+                spread: { value: spread }
+            },
+
+            vertexShader: document.getElementById( 'vertexShader' ).textContent,
+            fragmentShader: document.getElementById( 'fragmentShader' ).textContent
+        } );
+    }
+
+    function wait() {
+        if (imagesLoaded && musicLoaded && planeLoaded) {
+            console.log(imgs);
+            run();
+        } else {
+            setTimeout(wait, 500);
+        }
+    }
+
+    function loadAssets() {
+        loadImages();
+        loadMusic('assets/music/shelter.mp3');
+        loadPlane();
+    }
+
+
+    function start() {
+        loadAssets();
+        setTimeout(wait, 500);
+    }
+
+
+    function run() {
+        init();
+        createPlane();
+        generateLand();
+        createBG(3000, 3000);
+
+        window.addEventListener('keydown', handleKeyDown);
+        window.addEventListener('keyup', handleKeyUp);
+
+        playMusic(source);
+
+        animate();
+    }
+
+    var scene, camera, renderer;
+
+    var imagesLoaded = false,
+        musicLoaded = false,
+        planeLoaded = false;
+
+    var imgs, watercolors, masks;
+    var bgTexture;
+
+    var context = initAudioContext();
+    var sourceMusic;
+
+    var plane;
+
+    var groundTiles;
+    var p_border = genP();
+
+    var bg;
+
+    var left_pressed = false,
+        right_pressed = false;
+    var up_pressed = false,
+        down_pressed = false;
+
+    var time = 0;
+
+    start();
+</script>
+</body>
+</html>
