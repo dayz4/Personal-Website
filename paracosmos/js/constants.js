@@ -1,6 +1,6 @@
-const N_IMGS = 22;
+const N_IMGS = 0;
 const N_WATERCOLORS = 3;
-const N_MASKS = 4;
+const N_MASKS = 0;
 
 const N_GROUND_TILES = 33;
 const TERRAIN_SIZE = 400;
