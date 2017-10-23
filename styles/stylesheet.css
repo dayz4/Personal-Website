@@ -452,14 +452,20 @@ p {
 	padding: 15px 60px;
 	position: relative;
 	width: 49%;
+	margin-bottom: 2em;
+}
+
+.project p {
+	margin: 1em 0;
 }
 
 .project a {
+	color: black;
 }
 
 .project a:hover {
 	text-decoration: underline;
-	color: #02e3b0;
+	color: black;
 }
 
 .page#portfolio {

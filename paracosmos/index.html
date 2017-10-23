@@ -362,60 +362,13 @@
 
     function loadImages() {
         console.log('loading');
-        var imgsLoaded = false,
-            watercolorsLoaded = false,
-            masksLoaded = false,
-            bgLoaded = false;
+        var bgLoaded = false;
 
         var loader = new THREE.ImageLoader();
 
-        imgs = [];
-        for (var i=1; i<=N_IMGS; i++) {
-            loader.load("assets/images/" + i + ".jpeg", function(image) {
-                imgs.push(image);
-            });
-
-            if (i==N_IMGS) {
-                imgsLoaded = true;
-                if (watercolorsLoaded && masksLoaded && bgLoaded) {
-                    imagesLoaded = true;
-                }
-            }
-        }
-    
-        watercolors = [];
-        for (var j=1; j<=N_WATERCOLORS; j++) {
-            loader.load("assets/watercolors/watercolor" + j + ".jpg", function(image) {
-                watercolors.push(image);
-            });
-
-            if (j==N_WATERCOLORS) {
-                watercolorsLoaded = true;
-                if (imgsLoaded && masksLoaded && bgLoaded) {
-                    imagesLoaded = true;
-                }
-            }
-        }
-
-        masks = [];
-        for (var k=1; k<=N_MASKS; k++) {
-            loader.load("assets/watercolors/mask" + k + ".jpg", function(image) {
-                masks.push(image);
-            });
-
-            if (k==N_MASKS) {
-                masksLoaded = true;
-                if (imgsLoaded && watercolorsLoaded && bgLoaded) {
-                    imagesLoaded = true;
-                }
-            }
-        }
-
         bgTexture = new THREE.TextureLoader().load("assets/misc/bg.jpg", function() {
             bgLoaded = true;
-            if (imgsLoaded && watercolorsLoaded && masksLoaded) {
-                imagesLoaded = true;
-            } 
+            imagesLoaded = true;
         });
     }
 
