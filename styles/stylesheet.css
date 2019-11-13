@@ -640,8 +640,7 @@ figcaption a {
 
 /*Misc*/
 .emph {
-	font-size: 1.2em;
-
+	font-weight: bold;
 }
 
 .button.hollow {
