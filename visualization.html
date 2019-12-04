@@ -8,10 +8,10 @@ LICENSE file. -->
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
-		<link type="text/css" rel="stylesheet" href="styles/stylesheet.css"/>
+		<title>Data Visualization</title>
 
-		<title>Daisy Zheng | Data Visualization</title>
-
+		<link type="text/css" rel="stylesheet" href="css/foundation.min.css"/>
+		<link type="text/css" rel="stylesheet" href="css/base.css"/>
 		<style>
 			.tooltip {
 				position: absolute;
@@ -38,7 +38,6 @@ LICENSE file. -->
 			.vis {
 				position: relative;
 				display: inline;
-				color: white;
 			}
 
 			.menus{
@@ -55,15 +54,11 @@ LICENSE file. -->
 	</head>
 
 	<body>
-		<script type="text/javascript" src="scripts/jquery-1.12.0.min.js"></script>
-		<script type="text/javascript" src="scripts/foundation/vendor/foundation.min.js"></script>
-		<script type="text/javascript" src="scripts/main.js"></script>
+		<script type="text/javascript" src="js/vendor/jquery.js"></script>
+		<script type="text/javascript" src="js/vendor/foundation.min.js"></script>
+		<script type="text/javascript" src="js/base.js"></script>
 
-		<div class="bg" style="opacity: 0.4">
-			<img src="images/IMG_5133.JPG" width=100% height=100%>
-		</div>
-
-		<div class="nav"></div>
+		<div class="nav" id="navbar"></div>
 
 		<div class="vis">
 			<br><br>
@@ -76,16 +71,16 @@ LICENSE file. -->
 			t4: <input type="checkbox" id="t4"/>
 			<br>
 
-			<script type="text/javascript" src="scripts/d3.min.js"></script>
-			<script type="text/javascript" src="scripts/jquery-1.12.0.min.js"></script>
-			<script type="text/javascript" src="scripts/json/graph_mindsumo_json.js"></script>
-			<script type="text/javascript" src="scripts/json/graph_mindsumo_json_2.js"></script>
-			<script type="text/javascript" src="scripts/graph_mindsumo_partition.js"></script>
+			<script type="text/javascript" src="js/vendor/d3.min.js"></script>
+			<script type="text/javascript" src="js/vendor/jquery.js"></script>
+			<script type="text/javascript" src="js/json/graph_mindsumo_json.js"></script>
+			<script type="text/javascript" src="js/json/graph_mindsumo_json_2.js"></script>
+			<script type="text/javascript" src="js/graph_mindsumo_partition.js"></script>
 		</div>
 
 		<div class="content" id="visualization">
-			<h2 style="font-size: 40px"> Description: </h4> <br>
-			<i> Quickstart: <br>
+			<h2 style="font-size: 40px"> Description:</h4><br>
+			<i> Quickstart:<br>
 			<ul>
 				<li class="livis"> Single Click: Collapse/Expand </li>
 				<li class="livis"> Double Click: Zoom In/Out </li>

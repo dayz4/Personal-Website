@@ -1,0 +1,113 @@
+@import "base.css";
+
+.section#hero {
+	background-image: url("../assets/imgs/niagara.JPG");
+	background-size: cover;
+	height: 100vh;
+	width: 100vw;
+	text-align: center;
+	position: fixed;
+	top: 0;
+	z-index: -1;
+}
+
+.hero-section-text {
+	color: #fefefe;
+	text-shadow: 1px 1px 2px #0a0a0a;
+}
+
+.nav {
+	z-index: 1;
+}
+
+.circular {
+	border-radius: 50%;
+	height: 55vh;
+	width: 55vh;
+	background-size: cover;
+	background-position: center;
+}
+
+.section#about {
+	margin-top: 100vh;
+	height: 60em;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.content {
+	border-radius: 40px;
+	padding: 15px 25px;
+}
+
+.content#about {
+	background-color: rgba(255, 255, 255, 0.8);
+}
+
+.button-menu#about {
+	margin-top: 1em;
+	text-align: center;
+}
+
+.button.round {
+	border-radius: .5em;
+}
+
+.button.solid {
+	background-color: #02e3b0;
+	font-weight: bold;
+	color: black;
+    transition: color 0s;
+}
+
+.button.solid:hover {
+	background-color: #02e3b0;
+	color: white;
+}
+
+.button.hollow {
+	border-color: #02e3b0;
+	border-width: 3px;
+	font-weight: bold;
+	color: #02e3b0;
+    transition: color 0s;
+}
+
+.button.hollow:hover {
+	border-color: #03b087;
+	color: #03b087;
+}
+
+.quote {
+	font-size: 1.6em;
+	text-align: center;
+}
+
+.quote#wilderness {
+	background-color: white;
+}
+
+.section#timeline {
+	background-size: cover;
+	background-attachment: fixed;
+}
+
+
+.cd-timeline-content .cd-date {
+  font-size: 28px;
+  opacity: 1.0;
+}
+
+.cd-timeline-content p {
+	font-size: 1.3rem;
+}
+
+.section#contact {
+	background-color: white;
+	text-align: center;
+	padding: 1em 0;
+}
+
+.quote {
+	padding: 1em 0;
+}

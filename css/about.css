@@ -1,0 +1,15 @@
+
+.framed {
+	padding: 1px;
+	border: 2px solid silver;
+}
+
+#propic {
+	height: auto;
+	width: 100%;
+}
+
+li {
+	list-style-type: none;
+	font-size: 1.1em;
+}

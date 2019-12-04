@@ -1,0 +1,36 @@
+@font-face {
+    font-family: relic;
+    src: url("fonts/Relic-Regular.otf");
+}
+
+@font-face {
+    font-family: whale;
+    src: url("fonts/Whale-Song.otf");
+}
+
+.emph {
+	font-weight: bold;
+}
+
+.thickline {
+	border-color: gray;
+	background-color: gray;
+	margin: 5px auto;
+	border-width: 3px;
+}
+
+.centered {
+	text-align: center;
+}
+
+#nav-menu {
+	width: 100%;
+	min-width: 100%;
+	background-color: white;
+	opacity: .9;
+}
+
+#nav-menu ul {
+	background-color: white;
+	opacity: .9;
+}

@@ -1,58 +1,29 @@
 <!DOCTYPE html>
-<!-- This file uses the D3 and jQuery JavaScript libraries. Their copyright notices
-and license information are provided either inside their file or as a separate
-LICENSE file. -->
-
 <html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<link type="text/css" rel="stylesheet" href="css/foundation.min.css"/>
+	<link type="text/css" rel="stylesheet" href="css/base.css"/>
 
-		<link type="text/css" rel="stylesheet" href="styles/foundation/foundation.min.css"/>
-		<link type="text/css" rel="stylesheet" href="styles/stylesheet.css"/>
+	<title>Mistic</title>
 
-		<title>Daisy Zheng | Mistic</title>
-	</head>
+</head>
+<body>
+	<script type="text/javascript" src="js/vendor/jquery.js"></script>
+	<script type="text/javascript" src="js/vendor/foundation.min.js"></script>
+	<script type="text/javascript" src="js/base.js"></script>
 
-	<body>
-		<script type="text/javascript" src="javascripts/jquery-1.12.0.min.js"></script>
-		<script type="text/javascript" src="javascripts/javascript.js"></script>
+	<div class="nav" id="navbar"></div>
 
-		<div class="bg" style="opacity: 0.4">
-			<img src="images/IMG_5133.JPG" width=100% height=100%>
-		</div>
-
-		<div class="nav"></div>
-
-		<div class="vid" id="mistic">
-			<video width="1000" height="562.5" controls autoplay>
-				<source src="images/mistic_trailer.mp4" type="video/mp4">
+	<div class="centered">
+		<div>
+			<video width="1000" height="562.5" controls>
+				<source src="assets/videos/mistic_trailer.mp4" type="video/mp4">
 				Your browser doesn't support this video tag.
 			</video>
 		</div>
-
-		<div class="content" id="project">
-			<p>
-				<b>The Game:</b>
-				<ul>
-					<li class='libullets' style='font-family: sans-serif'> Scour the maze-like Misty Marsh in search of your magical familiars. </li>
-					<li class='libullets' style='font-family: sans-serif'> Collect fireflies and harness their light to cut through the Plague's darkness and ward off the Unfamiliars. </li>
-					<li class='libullets' style='font-family: sans-serif'> Block the Plague's progression by stategically lighting lanterns throughout the marsh. </li>
-					<li class='libullets' style='font-family: sans-serif'> Plan out your search carefully - the Plague spreads with every passing moment, and not everything that lurks within its depths is familiar... </li>
-				</ul>
-			</p>
-			<p>
-				<b>The Experience:</b>
-				<ul>
-					<li class='liplain' style='font-family: sans-serif'> A sense of unease and urgency pervades the landscape -
-						unseen enemies lurk within the Plague, and every moment spent wandering its
-						depths could be the last. In a world where one wrong move could spell disaster,
-						the stakes are high and the tension even higher.
-					</li>
-				</ul>
-			</p>
-			<p>
-				Download the game <b><a href="resources/Mistic.jar" download>here</a></b>.
-			</p>
-	</body>
-</html>
+		<a class="button solid round" href="assets/resources/Mystic.jar" download="">Download the Game (JAR)</a>
+	</div>
+</body>

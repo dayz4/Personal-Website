@@ -3,28 +3,47 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<link type="text/css" rel="stylesheet" href="css/foundation.min.css"/>
+	<link type="text/css" rel="stylesheet" href="css/base.css"/>
+	<link type="text/css" rel="stylesheet" href="css/projects.css"/>
 
-	<link type="text/css" rel="stylesheet" href="styles/foundation/foundation.min.css"/>
-	<link type="text/css" rel="stylesheet" href="styles/stylesheet.css"/>
-
-	<title>Daisy Zheng | Projects</title>
+	<title>Projects</title>
 
 </head>
-
 <body>
-	<script type="text/javascript" src="scripts/jquery-1.12.0.min.js"></script>
-	<script type="text/javascript" src="scripts/foundation/vendor/foundation.min.js"></script>
-	<script type="text/javascript" src="scripts/main.js"></script>
+	<script type="text/javascript" src="js/vendor/jquery.js"></script>
+	<script type="text/javascript" src="js/vendor/foundation.min.js"></script>
+	<script type="text/javascript" src="js/base.js"></script>
 
-	<div class="nav"></div>
+	<div class="nav" id="navbar"></div>
 
-	<div class="page" id="projects">
-		<h2> ~ Projects ~ </h2>
-		<hr class="thickline"> <br>
+	<h1 class="centered">Projects</h1>
 
-		<div class="project">
-			<h5 style="text-align: center"> Mistic </h5>
-			<img src="images/mistic.gif" style="width: 100%">
+	<div class="grid-x grid-padding-x grid-padding-y">
+		<div class="small-12 medium-6 large-6 cell">
+			<h5 class="centered"><a href="coalide.html">Coalide</a></h5>
+			<a href="coalide.html"><img src="assets/imgs/coalide.gif" style="width: 100%"></a>
+			<p>
+				Eons of balance have crumbled. The legendary Mount Blaze has fallen into a deep 
+				slumber, and the forest tribes have taken the chance to strike back at the coal 
+				tribes and reclaim the burnt land. Nicoal, a young coal tribe member, is left 
+				alone and devastated when the forest tribe attacks her home. She needs <i>your</i> 
+				help to venture past enemy territory and reunite with the other coal tribes. 
+				Her journey just might hold the key to answering why Mount Blaze abandoned her 
+				people when its people needed it the most.
+			</p>
+			<p>
+				Fast-paced, sumo-style game with smooth sling mechanics and quick-thinking strategic 
+				elements. Knock your enemies into the water before you meet the same fate.
+			</p>
+			<p>
+				Written in C++ for Android, team of 6.
+			</p>
+		</div>
+		<div class="small-12 medium-6 large-6 cell">
+			<h5 class="centered"><a href="mistic.html">Mistic</a></h5>
+			<a href="mistic.html"><img src="assets/imgs/mistic.gif" style="width: 100%"></a>
 			<p>
 				A deadly Plague fills the air, destroying all life in its path.
 				Only you - the swamp druid Gorf - can stand in its way. With only your
@@ -37,13 +56,12 @@
 				as you race to save your familiars before the Unfamiliars end you.
 			</p>
 			<p>
-				Written in Java and OpenGL using the libGDX framework and Box2D physics engine.
+				Written in Java and OpenGL using the libGDX framework and Box2D physics engine, team of 6.
 			</p>
 		</div>
-
-		<div class="project">
-			<h5 style="text-align: center"> <a href="terrain_simulator/index.html">Interactive Terrain Weather Simulator</a> </h5>
-			<a href="terrain_simulator/index.html"><img src="images/terrain_simulator.gif" style="width: 100%"></a>
+		<div class="small-12 medium-6 large-6 cell">
+			<h5 class="centered"><a href="terrain_simulator.html">Interactive Terrain Weather Simulator</a></h5>
+			<a href="terrain_simulator.html"><img src="assets/imgs/terrain_simulator.gif" style="width: 100%"></a>
 			<p>
 				The world is your playground. Each time you visit, the land changes, rearranging itself into an entirely
 				new landscape. Rain or snow, light or darkness, this world is yours to explore.
@@ -53,14 +71,12 @@
 				with interactive camera controls.
 			</p>
 			<p>
-				Written in JavaScript using WebGL.
+				Written in JavaScript using WebGL, team of 4.
 			</p>
-			<br>
 		</div>
-
-		<div class="project">
-			<h5 style="text-align: center"> <a href="paracosmos/index.html">Paracosmos</a> </h5>
-			<a href="paracosmos/index.html"><img src="images/paracosmos.gif" style="width: 100%"></a>
+		<div class="small-12 medium-6 large-6 cell">
+			<h5 class="centered"><a href="paracosmos.html">Paracosmos</a></h5>
+			<a href="paracosmos.html"><img src="assets/imgs/paracosmos.gif" style="width: 100%"></a>
 			<p>
 			<b><i>**HEADPHONES RECOMMENDED**</i></b>
 			</p>
@@ -75,10 +91,9 @@
 				Written in JavaScript using WebGL and Three.js.
 			</p>
 		</div>
-
-		<div class="project">
-			<h5 style="text-align: center"> <a href="visualization.html">Data Visualization</a> </h5>
-			<a href="visualization.html"><img src="images/data_vis_screenshot.png" style="width: 100%"></a>
+		<div class="small-12 medium-6 large-6 cell">
+			<h5 class="centered"> <a href="visualization.html">Data Visualization</a> </h5>
+			<a href="visualization.html"><img src="assets/imgs/data_vis_screenshot.png" style="width: 100%"></a>
 			<p>
 				<i> Winner of the "Create a data visualization to navigate educational standards" on Mindsumo. </i>
 			</p>
@@ -96,12 +111,10 @@
 			<p>
 				Written in HTML and JavaScript using D3.
 			</p>
-			<br><br>
 		</div>
-
-		<div class="project">
-			<h5 style="text-align: center"> <a href="gdp-life/index.html">GDP vs Life Expectancy Trends</a> </h5>
-			<a href="gdp-life/index.html"><img src="images/gdp-life_screenshot.png" style="width: 100%"></a>
+		<div class="small-12 medium-6 large-6 cell">
+			<h5 class="centered"><a href="gdp_life.html">GDP vs Life Expectancy Trends</a></h5>
+			<a href="gdp_life.html"><img src="assets/imgs/gdp-life_screenshot.png" style="width: 100%"></a>
 			<p>
 				Take a look through time at the development of the world's countries and see how GDP and Life Expectancy have 
 				changed over the years and the ways in which they are intertwined.
@@ -114,46 +127,5 @@
 				Written in JavaScript using WebGL.
 			</p>
 		</div>
-
-
-		<div class="project" style="vertical-align: top">
-			<h5 style="text-align: center"> Multiplayer Texas Hold 'Em </h5>
-			<div style="float: left; width: 65%">
-				<img src="images/poker.gif" style="width: 95%">
-			</div>
-			<p>
-				Think you've got what it takes? Then get ready to make it big. <br><br>
-				As Fort Minor would say, <i>"This is 10% luck, 20% skill, 15%
-				concentrated power of will, 5% pleasure, 50% pain, and 100% reason to
-				REMEMBER THE NAME."</i>
-			</p>
-			<p>
-				You just might go down in history as the world's greatest poker player...
-				or end up penniless on the streets. The cards have been dealt. The rest
-				is up to you.
-			</p>
-			<p>
-				Written in OCaml for CS 3110 final project in a team of 3.
-			</p>
-		</div>
-
-		<div class="project" style="vertical-align: top">
-			<h5 style="text-align: center"> <a href="snake.html">Snake Clash</a> </h5>
-			<div style="float: left; width: 50%">
-				<a href="snake.html"><img src="images/snakeclash_screenshot.png" style="width: 95%"></a>
-			</div>
-			<p>
-				Eat or... well just eat and don't crash! <br><br>
-				Snake is back! It's the classic game of eat and don't crash,
-				only this time your opponent isn't just yourself. Race the AI
-				around the board and eat, eat, eat! Better eat fast, because
-				in this world, it's not just about survival of the fittest - it's
-				about survival of the biggest.
-			</p>
-			<p>
-				Written in Java.
-			</p>
-		</div>
 	</div>
 </body>
-</html>

@@ -3,10 +3,221 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<link type="text/css" rel="stylesheet" href="css/foundation.min.css"/>
+	<link type="text/css" rel="stylesheet" href="css/timeline.css"/>
+	<link type="text/css" rel="stylesheet" href="css/base.css"/>
+	<link type="text/css" rel="stylesheet" href="css/home.css"/>
+
 	<title>Daisy Zheng</title>
 
 </head>
 
 <body>
-	<p>Under construction! Check back soon :)</p>
+	<script type="text/javascript" src="js/vendor/jquery.js"></script>
+    <script type="text/javascript" src="js/vendor/foundation.js"></script>
+    <script type="text/javascript" src="js/vendor/timeline.js"></script>
+	<script type="text/javascript" src="js/vendor/modernizr.js"></script>
+    <script type="text/javascript" src="js/base.js"></script>
+
+	<div class="nav" id="navbar"></div>
+
+	<!-- Hero -->
+	<div class="section" id="hero">
+		<div class="grid-container">
+			<div class="grid-y grid-padding-y grid-frame">
+				<div class="small-2 medium-2 large-2 cell"></div>
+				<div class="shrink cell">
+					<div class="grid-y align-center" style="height:100%">
+						<div class="hero-section-text">
+							<h1>Daisy Zheng</h1>
+							<h5>Software Engineer • Photographer</h5>
+						</div>
+					</div>
+				</div>
+				<div class="auto cell">
+					<div class="grid-x align-center" style="height:100%">
+						<div class="circular" id="pro-pic" style="background-image: url(assets/imgs/profile.JPG)"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- About -->
+	<div class="section" id="about" style="background-image: url(assets/imgs/kuzco.jpg)">
+		<div class="grid-y align-center" style="height:100%">
+			<div class="small-1 medium-1 large-1 cell"></div>
+			<div class="auto cell">
+				<div class="grid-x" style="height:100%">
+					<div class="small-1 medium-2 large-6 cell"></div>
+					<div class="small-10 medium-8 large-5 cell">
+						<div class="content" id="about">
+							<hr class="thickline">
+							<br>
+							<h5> I code visuals. </h5>
+							<p>
+								I'm a <span class="emph">software developer</span> who's worked on a range of projects 
+								dealing in <span class="emph">computer vision, graphics, game development, and data 
+								visualization</span> on both the front-end and back-end. I have a 
+								<span class="emph">passion for design and the arts and a love of biology</span>, and 
+								I'm striving to find my place at the intersection of computer science and those fields.
+							</p>
+							<!-- <a class="button hollow" href="about.html"">Find Out More</a> -->
+							<a class="button hollow" href="projects.html"">Check Out My Work</a>
+							<br><br>
+							<h5> My photos show my world. </h5>
+							<p>
+								I'm a <span class="emph">photographer</span> who set out to document those fleeting 
+								moments that would ordinarily just pass us by. There's a lot of things that I'm still 
+								figuring out, put this I know for sure: my goal isn't to create art, nor is it to 
+								document reality — <span class="emph">I'm just out to capture my own truth.</span> 
+							</p>
+							<a class="button hollow" href="http://chasingshadows4.wordpress.com">See Some of My Photos</a>
+							<br><br>
+							<hr class="thickline">
+						</div>
+						<div class="button-menu" id="about">
+							<!-- <a class="button solid round" href="about.html">About Me</a> -->
+							<a class="button solid round" href="projects.html">Projects</a>
+							<a class="button solid round" href="resources/resume.pdf">Resume</a>
+							<!-- <a class="button solid round" href="portfolio.html">Portfolio</a> -->
+							<a class="button solid round" href="http://chasingshadows4.wordpress.com">Photoblog</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Quote -->
+	<div class="quote" id="wilderness" style="background-color: white">
+		"You have to leave the city of your comfort and go into the wilderness of your intuition. What you'll discover will be wonderful. What you'll discover will be yourself." - Alan Alda
+	</div>
+
+	<!-- Timeline -->
+	<div class="section" id="timeline" style="background-image: url(assets/imgs/DSC_0474_lq.jpg); box-shadow: 0px 40px 40px 40px black">
+		<section id="cd-timeline" class="cd-container">
+			<br><br>
+			<div class="cd-timeline-block">
+				<div class="cd-timeline-img" style="background-image: url(assets/imgs/yext.png); background-color: white; 
+					background-size: contain; background-repeat: no-repeat; background-position: center">
+				</div> <!-- cd-timeline-img -->
+
+				<div class="cd-timeline-content">
+					<h3> Yext </h3>
+					<p style="text-align: center"> <i> Software Engineer </i> </p>
+					<span class="cd-date">July 2018 - Present</span>
+				</div> <!-- cd-timeline-content -->
+			</div> <!-- cd-timeline-block -->
+			<div class="cd-timeline-block">
+				<div class="cd-timeline-img" style="background-image: url(assets/imgs/firecube.png); background-color: white; background-size: fill; background-repeat: no-repeat; background-position: center">
+				</div> <!-- cd-timeline-img -->
+
+				<div class="cd-timeline-content">
+					<h3> Game Design Initiative at Cornell, Team Firecube </h3>
+					<p style="text-align: center"> <i> Software Lead </i> </p>
+					<span class="cd-date">January 2018 - May 2018</span>
+				</div> <!-- cd-timeline-content -->
+			</div> <!-- cd-timeline-block -->
+			<div class="cd-timeline-block">
+				<div class="cd-timeline-img" style="background-image: url(assets/imgs/biogen_logo.svg); background-color: white; background-size: contain; background-repeat: no-repeat; background-position: center">
+				</div> <!-- cd-timeline-img -->
+
+				<div class="cd-timeline-content">
+					<h3> Biogen </h3>
+					<p style="text-align: center"> <i> R&amp;D IT/Enterprise Architecture Intern </i> </p>
+					<span class="cd-date">June 2017 - August 2017</span>
+				</div> <!-- cd-timeline-content -->
+			</div> <!-- cd-timeline-block -->
+
+			<div class="cd-timeline-block">
+				<div class="cd-timeline-img" style="background-image: url(assets/imgs/mistic.png)">
+				</div> <!-- cd-timeline-img -->
+
+				<div class="cd-timeline-content">
+					<h3> Game Design Initiative at Cornell, Team Mishka </h3>
+					<p style="text-align: center"> <i> MVP, Graphics Lead </i> </p>
+					<span class="cd-date">January 2017 - May 2017</span>
+				</div> <!-- cd-timeline-content -->
+			</div> <!-- cd-timeline-block -->
+
+			<div class="cd-timeline-block">
+				<div class="cd-timeline-img" style="background-image: url(assets/imgs/phope.png)">
+				</div> <!-- cd-timeline-img -->
+
+				<div class="cd-timeline-content">
+					<h3> Project Hope </h3>
+					<p style="text-align: center"> <i> Co-Publicity Chair </i> </p>
+					<span class="cd-date">March 2016 - May 2017</span>
+				</div> <!-- cd-timeline-content -->
+			</div> <!-- cd-timeline-block -->
+
+			<div class="cd-timeline-block">
+				<div class="cd-timeline-img" style="background-image: url(assets/imgs/infinity_proav.jpg)">
+				</div> <!-- cd-timeline-img -->
+
+				<div class="cd-timeline-content">
+					<h3> Infinity ProAV </h3>
+					<p style="text-align: center"> <i> Computer Vision Intern </i> </p>
+					<span class="cd-date">June 2016 - August 2016</span>
+				</div> <!-- cd-timeline-content -->
+			</div> <!-- cd-timeline-block -->
+
+			<div class="cd-timeline-block">
+				<div class="cd-timeline-img" style="background-image: url(assets/imgs/cornell_seal.jpg)">
+				</div> <!-- cd-timeline-img -->
+
+				<div class="cd-timeline-content">
+					<h3> Cornell University College of Human Ecology </h3>
+					<p style="text-align: center"> <i> Website Redesign Team </i> </p>
+					<span class="cd-date">February 2016 - August 2016</span>
+				</div> <!-- cd-timeline-content -->
+			</div> <!-- cd-timeline-block -->
+
+			<div class="cd-timeline-block">
+				<div class="cd-timeline-img" style="background-image: url(assets/imgs/codecamp.jpg)">
+				</div> <!-- cd-timeline-img -->
+
+				<div class="cd-timeline-content">
+					<h3> Cornell Coding Boot Camp </h3>
+					<p style="text-align: center"> <i> Mentor </i> </p>
+					<span class="cd-date">September 26, 2015</span>
+				</div> <!-- cd-timeline-content -->
+			</div> <!-- cd-timeline-block -->
+
+			<div class="cd-timeline-block">
+				<div class="cd-timeline-img" style="background-image: url(assets/imgs/canoe.jpg)">
+				</div> <!-- cd-timeline-img -->
+
+				<div class="cd-timeline-content">
+					<h3> Concrete Canoe Engineering Project Team </h3>
+					<p style="text-align: center"> <i> Aesthetics Subteam, Team Historian </i> </p>
+					<span class="cd-date">September 2014 - May 2015</span>
+				</div> <!-- cd-timeline-content -->
+			</div> <!-- cd-timeline-block -->
+
+			<div class="cd-timeline-block">
+				<div class="cd-timeline-img" style="background-image: url(assets/imgs/ican_logo.png); background-color: white; background-size: contain; background-repeat: no-repeat; background-position: center">
+				</div> <!-- cd-timeline-img -->
+
+				<div class="cd-timeline-content">
+					<h3> International Cancer Advocacy Network </h3>
+					<p style="text-align: center"> <i> Web Research Intern </i> </p>
+					<span class="cd-date">February 2012 - July 2012</span>
+				</div> <!-- cd-timeline-content -->
+			</div> <!-- cd-timeline-block -->
+			<br>
+		</section> <!-- cd-timeline -->
+	</div>
+
+	<!-- Contact -->
+	<div class="section" id="contact">
+		<h2>Contact Me</h2>
+		<hr class="thickline" align="center" width="100%"><br>
+		Let's get in touch! You can reach me at:<br>
+		<b>daisyzheng9@gmail.com</b>
+		<br><br><br>
+	</div>
 </body>
+</html>

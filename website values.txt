@@ -1,9 +1,0 @@
-Wushu		Discipline
-Music		Heart
-Gymnastics	Determination
-Spartan/Running	Endurance
-
-Dance		Grace
-Writing		Imagination
-Art		Vision
-Travel/Hiking	Exploration
