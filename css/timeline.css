@@ -223,8 +223,7 @@ Main components
   background-color: #bac4cb;
 }
 .cd-timeline-content .cd-date {
-  float: left;
-  padding: 3.4em 0;
+  padding: 1.4em 0;
   opacity: .7;
 }
 .cd-timeline-content::before {
@@ -254,7 +253,7 @@ Main components
 @media only screen and (min-width: 1170px) {
   .cd-timeline-content {
     margin-left: 0;
-    padding: 1.6em;
+    padding: 1em;
     width: 38.5%;
   }
   .cd-timeline-content::before {
@@ -262,9 +261,6 @@ Main components
     left: 100%;
     border-color: transparent;
     border-left-color: white;
-  }
-  .cd-timeline-content .cd-read-more {
-    float: left;
   }
   .cd-timeline-content .cd-date {
     position: absolute;

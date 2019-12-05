@@ -1,11 +1,40 @@
 @font-face {
-    font-family: relic;
-    src: url("fonts/Relic-Regular.otf");
+    font-family: whale;
+    src: url("../assets/fonts/Whale-Song.otf");
 }
 
 @font-face {
-    font-family: whale;
-    src: url("fonts/Whale-Song.otf");
+    font-family: relic;
+    src: url("../assets/fonts/Relic-Regular.otf");
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: whale;
+	text-align: center;
+}
+
+h1 {
+	font-size: 5em;
+}
+
+h2 {
+	font-size: 4em;
+}
+
+h3 {
+	font-size: 3em;
+}
+
+h4 {
+	font-size: 2em;
+}
+
+h5 {
+	font-size: 1.5em;
+}
+
+h6 {
+	font-size: 1.2em;
 }
 
 .emph {
@@ -23,14 +52,59 @@
 	text-align: center;
 }
 
+.left-aligned {
+	text-align: left;
+}
+
 #nav-menu {
 	width: 100%;
 	min-width: 100%;
 	background-color: white;
 	opacity: .9;
+	padding: 0;
 }
 
 #nav-menu ul {
 	background-color: white;
-	opacity: .9;
+}
+
+#nav-menu a {
+	color: black;
+	padding: 10px 20px;
+	font-size: 16px;
+	font-weight: 600;
+}
+
+.nav-item a:hover {
+	background-color: #02e3b0;
+	text-decoration: none;
+}
+
+.button.round {
+	border-radius: 10px;
+}
+
+.button.solid {
+	background-color: #02e3b0;
+	font-weight: bold;
+	color: black;
+    transition: color 0s;
+}
+
+.button.solid:hover {
+	background-color: #02e3b0;
+	color: white;
+}
+
+.button.hollow {
+	border-color: #02e3b0;
+	border-width: 3px;
+	font-weight: bold;
+	color: #02e3b0;
+    transition: color 0s;
+}
+
+.button.hollow:hover {
+	border-color: #03b087;
+	color: #03b087;
 }

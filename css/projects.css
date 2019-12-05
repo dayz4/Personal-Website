@@ -1,0 +1,12 @@
+a {
+	color: black;
+}
+
+a:hover {
+	text-decoration: underline;
+	color: black;
+}
+
+img {
+	margin-bottom: 1em;
+}

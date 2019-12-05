@@ -30,61 +30,42 @@
 
 .section#about {
 	margin-top: 100vh;
-	height: 60em;
+	height: 70em;
 	background-size: cover;
 	background-repeat: no-repeat;
 }
 
 .content {
 	border-radius: 40px;
-	padding: 15px 25px;
+	padding: 2em 4em;
 }
 
 .content#about {
 	background-color: rgba(255, 255, 255, 0.8);
 }
 
-.button-menu#about {
+.button-menu {
 	margin-top: 1em;
 	text-align: center;
 }
 
-.button.round {
-	border-radius: .5em;
-}
-
-.button.solid {
-	background-color: #02e3b0;
-	font-weight: bold;
-	color: black;
-    transition: color 0s;
-}
-
-.button.solid:hover {
-	background-color: #02e3b0;
-	color: white;
-}
-
-.button.hollow {
-	border-color: #02e3b0;
-	border-width: 3px;
-	font-weight: bold;
-	color: #02e3b0;
-    transition: color 0s;
-}
-
-.button.hollow:hover {
-	border-color: #03b087;
-	color: #03b087;
-}
-
 .quote {
+	font-family: relic;
 	font-size: 1.6em;
 	text-align: center;
+	padding: 1em;
 }
 
 .quote#wilderness {
 	background-color: white;
+	box-shadow: 0px 50px 100px 10px black;
+	position: relative;
+}
+
+.quote#great-world {
+	background-color: #0e0e3f;
+	color: silver;
+	box-shadow: 0px 10px 50px 50px black;
 }
 
 .section#timeline {
@@ -108,6 +89,18 @@
 	padding: 1em 0;
 }
 
-.quote {
-	padding: 1em 0;
+.cd-timeline-content {
+	text-align: center;
+}
+
+.cd-timeline-content .cd-date {
+	padding: 0.5em 0;
+	text-align: center;
+}
+
+@media only screen and (min-width: 1170px) {
+	.cd-timeline-content .cd-date {
+		padding: 1.4em 0;
+		text-align: left;
+	}
 }
