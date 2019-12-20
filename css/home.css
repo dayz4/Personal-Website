@@ -112,14 +112,7 @@
 
 #loading {
 	position: fixed;
-	top: 35vh;
-	width : 40vw;
-	left: 30vw;
-	height: auto;
-}
-
-#loading i {
-	font-size: 3em;
-	position: absolute;
-	top: 25%;
+	top: 42vh;
+	left: 47vw;
+	font-size: 3em
 }

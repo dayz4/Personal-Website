@@ -108,3 +108,7 @@ h6 {
 	border-color: #03b087;
 	color: #03b087;
 }
+
+.page {
+	padding: 2em;
+}
