@@ -5,6 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	
 	<link type="text/css" rel="stylesheet" href="css/foundation.min.css"/>
+	<link type="text/css" rel="stylesheet" href="css/fontawesome/css/all.min.css"/>
 	<link type="text/css" rel="stylesheet" href="css/timeline.css"/>
 	<link type="text/css" rel="stylesheet" href="css/base.css"/>
 	<link type="text/css" rel="stylesheet" href="css/home.css"/>
@@ -15,12 +16,21 @@
 
 <body>
 	<script type="text/javascript" src="js/vendor/jquery.js"></script>
+	<script type="text/javascript" src="js/vendor/jquery.animate-colors-min.js"></script>
     <script type="text/javascript" src="js/vendor/foundation.js"></script>
     <script type="text/javascript" src="js/vendor/timeline.js"></script>
 	<script type="text/javascript" src="js/vendor/modernizr.js"></script>
     <script type="text/javascript" src="js/base.js"></script>
 
 	<div class="nav" id="navbar"></div>
+
+	<!-- Loading -->
+	<div id="loading-screen">
+		<div id=loading>
+			<i class="fas fa-spinner fa-spin"></i>
+			<h1> Loading... </h1>
+		</div>
+	</div>
 
 	<!-- Hero -->
 	<div class="section" id="hero">
@@ -77,7 +87,7 @@
 							<br><br>
 							<hr class="thickline">
 						</div>
-						<div class="button-menu">
+						<div class="button-menu" id="about-buttons">
 							<a class="button solid round" href="about.html">About Me</a>
 							<a class="button solid round" href="projects.html">Projects</a>
 							<a class="button solid round" href="resources/resume.pdf">Resume</a>
