@@ -12,7 +12,7 @@ $(window).on('load', function() {
 	$('#loading-screen').fadeOut(400);
 	$('.hero-section-text').css('left', '5%').delay(400).animate({'opacity': 'show', 'left': '0%'}, 800);
 	$('#pro-pic').delay(1000).animate({'width': '55vh', 'height': '55vh', 'border-radius': '50%', 'margin-top': '0'}, 1000);
-	$('.hero-section-text').delay(1200).animate({'color': 'white'}, 1000);
+	$('.hero-section-text').delay(1100).animate({'color': 'white'}, 1000);
 });
 
 $(window).scroll(function() {
